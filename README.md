@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu-Tech/India | Study In India</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:#f5f7fb;color:#1e293b;line-height:1.6;}
+    nav{position:fixed;top:0;width:100%;background:rgba(7,25,82,0.95);backdrop-filter:blur(10px);z-index:1000;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,0.1);}
+    
+    /* Logo and flags */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .flag {
+      width: 30px;
+      height: 20px;
+      border-radius: 3px;
+      object-fit: cover;
+    }
+
+    nav h1{color:white;font-size:30px;font-weight:800;}
+    nav ul{display:flex;list-style:none;gap:28px;}
+    nav ul li a{color:white;text-decoration:none;font-size:15px;transition:0.3s;}
+    nav ul li a:hover{color:#ffd54f;}
+    .menu-toggle{display:none;font-size:30px;color:white;cursor:pointer;}
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 8% 80px;background:linear-gradient(rgba(5,15,55,0.8), rgba(5,15,55,0.8)),url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1400&auto=format&fit=crop');background-size:cover;background-position:center;color:white;}
+    .hero-content{max-width:700px;animation: fadeInUp 1s ease forwards;opacity:0;}
+    @keyframes fadeInUp{0%{opacity:0; transform: translateY(50px);}100%{opacity:1; transform: translateY(0);}}
+    .hero h2{font-size:65px;line-height:1.1;margin-bottom:25px;font-weight:800;}
+    .hero p{font-size:18px;color:#e2e8f0;margin-bottom:35px;}
+    .buttons{display:flex;gap:18px;flex-wrap:wrap;}
+    .btn{padding:15px 32px;border-radius:14px;border:none;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;transition:0.3s;display:inline-block;}
+    .btn-primary{background:#ffd54f;color:#111827;}
+    .btn-primary:hover{transform:translateY(-3px);background:#ffca28;}
+    .btn-secondary{border:2px solid white;color:white;}
+    .btn-secondary:hover{background:white;color:#071952;}
+    section{padding:90px 8%;}
+    .section-title{text-align:center;margin-bottom:60px;}
+    .section-title h3{font-size:42px;margin-bottom:10px;color:#071952;}
+    .section-title p{color:#64748b;font-size:16px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;}
+    .card{background:white;padding:35px;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.08);transition:0.3s;}
+    .card:hover{transform:translateY(-8px);}
+    .card h4{color:#071952;font-size:24px;margin-bottom:15px;}
+    .card p{color:#475569;margin-bottom:15px;}
+    .services{background:linear-gradient(to right,#071952,#0b4f9c);color:white;}
+    .services .section-title h3,.services .section-title p{color:white;}
+    .services .card{background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);color:white;}
+    .services .card h4,.services .card p{color:white;}
+    .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:center;}
+    .about img{width:100%;border-radius:24px;box-shadow:0 15px 35px rgba(0,0,0,0.15);}
+    .about-text h3{font-size:42px;color:#071952;margin-bottom:20px;}
+    .about-text p{color:#475569;margin-bottom:18px;}
+    .contact-box{background:white;padding:50px;border-radius:30px;box-shadow:0 10px 35px rgba(0,0,0,0.1);}
+    form{display:grid;gap:18px;margin-top:25px;}
+    input,textarea,select{width:100%;padding:16px;border-radius:14px;border:1px solid #cbd5e1;font-size:15px;font-family:inherit;}
+    textarea{min-height:150px;resize:vertical;}
+    footer{background:#020617;color:#cbd5e1;text-align:center;padding:30px;font-size:14px;}
+    @media(max-width:900px){.menu-toggle{display:block;}nav ul{position:absolute;top:80px;right:8%;background:#071952;flex-direction:column;width:220px;padding:20px;border-radius:16px;display:none;}nav ul.active{display:flex;}.hero h2{font-size:46px;}section{padding:80px 6%;}}
+    @media(max-width:600px){.hero h2{font-size:38px;}.hero p{font-size:16px;}.section-title h3,.about-text h3{font-size:32px;}.contact-box{padding:30px;}}
+    #whatsapp-button{position:fixed;bottom:30px;right:30px;background:#25D366;color:white;font-size:30px;width:60px;height:60px;text-align:center;line-height:60px;border-radius:50%;box-shadow:0 5px 15px rgba(0,0,0,0.3);z-index:10000;transition: transform 0.3s;text-decoration:none;}
+    #whatsapp-button:hover{transform: scale(1.2);}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Sudan.svg" alt="Sudan Flag" class="flag">
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India Flag" class="flag">
+    <h1>Edu-Tech/India</h1>
+  </div>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+  <ul id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#universities">Universities</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h2>Study In India With Edu-Tech</h2>
+    <p>Edu-Tech helps Sudanese and international students get admission to top Indian universities with full support.</p>
+    <div class="buttons">
+      <a href="#contact" class="btn btn-primary">Apply Now</a>
+      <a href="#universities" class="btn btn-secondary">Explore Universities</a>
+    </div>
+  </div>
+</section>
+
+<section id="universities">
+  <div class="section-title"><h3>Partner Universities</h3><p>Top universities in India</p></div>
+  <div class="cards">
+    <div class="card"><h4>Noida International University</h4><p>Modern campus with international support</p></div>
+    <div class="card"><h4>Galgotias University</h4><p>Fast-growing private university</p></div>
+    <div class="card"><h4>Sharda University</h4><p>International university known for quality</p></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-title"><h3>Our Services</h3><p>Professional support</p></div>
+  <div class="cards">
+    <div class="card"><h4>University Admission</h4></div>
+    <div class="card"><h4>Visa Assistance</h4></div>
+    <div class="card"><h4>Accommodation Support</h4></div>
+    <div class="card"><h4>Airport Pickup</h4></div>
+    <div class="card"><h4>Career Counseling</h4></div>
+    <div class="card"><h4>Student Support</h4></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Students">
+    <div class="about-text"><h3>Why Choose Edu-Tech?</h3><p>We help Sudanese and international students start their journey in India.</p><p>We provide guidance for admissions, visa, accommodation, and support.</p><a href="#contact" class="btn btn-primary">Contact Us</a></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title"><h3>Contact Us</h3><p>Get in touch today</p></div>
+  <div class="contact-box">
+    <form action="https://formspree.io/f/mzdoqdbv" method="POST" onsubmit="showThankYou(); return false;">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <input type="text" name="whatsapp" placeholder="WhatsApp Number">
+      
+      <select name="course" required>
+        <option value="" disabled selected>-- Select Course --</option>
+        <optgroup label="School of Allied Health Science">
+          <option value="Medical Laboratory Technology">Medical Laboratory Technology</option>
+          <option value="Physiotherapy">Physiotherapy</option>
+          <option value="Radiology">Radiology</option>
+          <option value="Occupational Therapy">Occupational Therapy</option>
+        </optgroup>
+        <optgroup label="School of Engineering & Technology">
+          <option value="Mechatronics">Mechatronics</option>
+          <option value="Mechanical Engineering">Mechanical Engineering</option>
+          <option value="Electrical Engineering">Electrical Engineering</option>
+          <option value="Civil Engineering">Civil Engineering</option>
+          <option value="Software Engineering">Software Engineering</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="Artificial Intelligence">Artificial Intelligence</option>
+        </optgroup>
+        <optgroup label="School of Nursing">
+          <option value="General Nursing">General Nursing</option>
+          <option value="Pediatric Nursing">Pediatric Nursing</option>
+          <option value="Community Health Nursing">Community Health Nursing</option>
+        </optgroup>
+        <optgroup label="School of Science">
+          <option value="B.Sc. (Hons)">B.Sc. (Hons)</option>
+          <option value="B.Sc-FS">B.Sc-FS</option>
+          <option value="BCA">BCA</option>
+          <option value="B.Sc-FS">B.Sc-FS</option>
+          <option value="MCA">MCA</option>
+        </optgroup>
+        <optgroup label="School of Fine Arts">
+          <option value="Painting">Painting</option>
+          <option value="Sculpture">Sculpture</option>
+          <option value="Music">Music</option>
+          <option value="Dance">Dance</option>
+        </optgroup>
+        <optgroup label="School of Law">
+          <option value="LLB">LLB</option>
+          <option value="Corporate Law">Corporate Law</option>
+          <option value="International Law">International Law</option>
+        </optgroup>
+        <optgroup label="School of Pharmacy">
+          <option value="Pharmacy">Pharmacy</option>
+          <option value="Pharmaceutical Chemistry">Pharmaceutical Chemistry</option>
+          <option value="Pharmacology">Pharmacology</option>
+        </optgroup>
+        <optgroup label="School of Business">
+          <option value="BBA">BBA</option>
+          <option value="MBA">MBA</option>
+          <option value="Finance">Finance</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Human Resources">Human Resources</option>
+          <option value="Commerce">Commerce</option>
+        </optgroup>
+      </select>
+
+      <textarea name="message" placeholder="Write your message..."></textarea>
+      <button class="btn btn-primary" type="submit">Send Message</button>
+    </form>
+    <p id="thankyou" style="display:none;color:green;font-weight:bold;margin-top:10px;">شكراً! حنرد ليك في أقرب وقت</p>
+  </div>
+</section>
+
+<footer>© 2026 Edu-Tech. All Rights Reserved.</footer>
+<a href="https://wa.me/249115766604" target="_blank" id="whatsapp-button">💬</a>
+
+<script>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+menuToggle.addEventListener("click",()=>{navLinks.classList.toggle("active");});
+
+function showThankYou(){
+  document.getElementById("thankyou").style.display = "block";
+  setTimeout(()=>{document.getElementById("thankyou").style.display = "none";},5000);
+  // Submit form via fetch
+  const form = document.querySelector('form');
+  fetch(form.action,{
+    method:"POST",
+    body:new FormData(form),
+    headers:{"Accept":"application/json"}
+  }).then(response=>{form.reset();}).catch(error=>{console.log(error);});
+}
+</script>
+
+</body>
+</html>
